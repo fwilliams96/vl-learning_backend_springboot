@@ -1,0 +1,35 @@
+version: '3.9'
+services:
+  users:
+    container_name: users
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    ports:
+      - "8081:8081"
+    environment:
+      - PORT=8081
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=users
+    depends_on:
+      - postgresql
+    restart: always
+
+  postgresql:
+    image: postgres:13
+    container_name: postgresql
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=users
+    volumes:
+      - postgresdata:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  postgresdata:
