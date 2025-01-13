@@ -23,6 +23,12 @@ public class PostgresqlUserRepository implements UserRepository {
     }
 
     @Override
+    public Optional<User> findByExternalId(String externalId) {
+        Optional<UserEntity> byExternalId = springDataPostgresqlUserRepository.findByExternalId(externalId);
+        return byExternalId.map(this::mapUserEntityToUser);
+    }
+
+    @Override
     public Optional<User> findByEmail(String email) {
         Optional<UserEntity> byEmail = springDataPostgresqlUserRepository.findByEmail(email);
         return byEmail.map(this::mapUserEntityToUser);

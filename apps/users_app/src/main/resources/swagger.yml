@@ -11,6 +11,13 @@ paths:
     post:
       tags:
         - Users create post v1
+#      parameters:
+#        - in: header
+#          name: X-User-Id
+#          schema:
+#            type: string
+#          required: true
+#          description: User ID
       operationId: post-users-create
       summary: POST users create
       requestBody:
@@ -37,6 +44,7 @@ components:
           properties:
             id:
               type: string
+              format: uuid
               description: User ID
           required:
             - id

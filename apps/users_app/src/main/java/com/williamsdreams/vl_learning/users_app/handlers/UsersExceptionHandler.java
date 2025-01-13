@@ -1,7 +1,7 @@
 package com.williamsdreams.vl_learning.users_app.handlers;
 
-import com.williamsdreams.vl_learning.api.dto.ErrorDto;
-import com.williamsdreams.vl_learning.api.dto.ErrorMessageDto;
+import com.williamsdreams.vl_learning.users_app.api.dto.ErrorDto;
+import com.williamsdreams.vl_learning.users_app.api.dto.ErrorMessageDto;
 import com.williamsdreams.vl_learning.auth.domain.UserAlreadyExistsError;
 import com.williamsdreams.vl_learning.auth.domain.UserInvalidCredentialsError;
 import com.williamsdreams.vl_learning.auth.domain.UserNotFoundError;

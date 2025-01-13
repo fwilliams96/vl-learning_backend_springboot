@@ -20,9 +20,9 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <swagger-annotations.version>2.2.7</swagger-annotations.version>
-        <openapi-generator-api-base-package-name>com.williamsdreams.vl_learning</openapi-generator-api-base-package-name>
-        <openapi-generator-api-package-name>com.williamsdreams.vl_learning.api</openapi-generator-api-package-name>
-        <openapi-generator-model-package-name>com.williamsdreams.vl_learning.api.dto</openapi-generator-model-package-name>
+        <openapi-generator-api-base-package-name>com.williamsdreams.vl_learning.users_app</openapi-generator-api-base-package-name>
+        <openapi-generator-api-package-name>com.williamsdreams.vl_learning.users_app.api</openapi-generator-api-package-name>
+        <openapi-generator-model-package-name>com.williamsdreams.vl_learning.users_app.api.dto</openapi-generator-model-package-name>
         <openapi-generator-swagger-file-path>${project.basedir}/src/main/resources/swagger.yml</openapi-generator-swagger-file-path>
     </properties>
 
@@ -36,10 +36,6 @@
             <groupId>com.williamsdreams</groupId>
             <artifactId>shared</artifactId>
             <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
         <dependency>
             <groupId>io.swagger.core.v3</groupId>

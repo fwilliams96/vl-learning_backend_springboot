@@ -1,9 +1,11 @@
 package com.williamsdreams.vl_learning.shared.infrastructure.persistence;
 
 import jakarta.persistence.Id;
+import jakarta.persistence.MappedSuperclass;
 
 import java.util.UUID;
 
+@MappedSuperclass
 public abstract class UuidIdentifiedEntity {
 
     @Id

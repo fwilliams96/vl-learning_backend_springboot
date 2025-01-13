@@ -18,4 +18,8 @@ public class UserFinder {
         return userRepository.findById(userId);
     }
 
+    public Optional<User> findByExternalId(String externalId) {
+        return userRepository.findByExternalId(externalId);
+    }
+
 }

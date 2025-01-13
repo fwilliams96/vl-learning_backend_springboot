@@ -2,6 +2,8 @@ package com.williamsdreams.vl_learning.gateway_app.services;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseToken;
+import com.williamsdreams.vl_learning.auth.application.find.UserFinder;
+import com.williamsdreams.vl_learning.auth.domain.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.http.HttpHeaders;
@@ -13,11 +15,14 @@ import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFac
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
+import java.util.Optional;
+
 @Component
 @RequiredArgsConstructor
 public class AuthenticationFilter extends AbstractGatewayFilterFactory<AuthenticationFilter.Config> {
 
     private final RouterValidator routerValidator;
+    private final UserFinder userFinder;
 
     public static class Config {
         // Put configuration properties here
@@ -42,11 +47,16 @@ public class AuthenticationFilter extends AbstractGatewayFilterFactory<Authentic
 
             try {
                 FirebaseToken decodedToken = FirebaseAuth.getInstance().verifyIdToken(idToken);
-                String userId = decodedToken.getUid();
+                String externalUserId = decodedToken.getUid();
+
+                Optional<User> byExternalId = userFinder.findByExternalId(externalUserId);
+                if (byExternalId.isEmpty()) {
+                    return onError(exchange, HttpStatus.UNAUTHORIZED);
+                }
 
                 // Add userId as a header
                 ServerWebExchange modifiedExchange = exchange.mutate().request(
-                        exchange.getRequest().mutate().header("userId", userId).build()
+                        exchange.getRequest().mutate().header("X-User-Id", byExternalId.get().getId().toString()).build()
                 ).build();
 
                 return chain.filter(modifiedExchange);
