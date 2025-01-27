@@ -11,13 +11,13 @@ paths:
     post:
       tags:
         - Users create post v1
-#      parameters:
-#        - in: header
-#          name: X-User-Id
-#          schema:
-#            type: string
-#          required: true
-#          description: User ID
+      parameters:
+        - in: header
+          name: X-User-Id
+          schema:
+            type: string
+          required: true
+          description: User ID
       operationId: post-users-create
       summary: POST users create
       requestBody:
@@ -27,6 +27,25 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/NewUser'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+    get:
+      tags:
+          - User get v1
+      parameters:
+        - in: query
+          name: externalId
+          schema:
+            type: string
+          required: false
+          description: External ID
+      operationId: get-user-by-external-id
+      summary: GET user by external ID
       responses:
         '200':
           description: OK
@@ -46,6 +65,9 @@ components:
               type: string
               format: uuid
               description: User ID
+            externalId:
+              type: string
+              description: External ID
           required:
             - id
     NewUser:
@@ -54,9 +76,6 @@ components:
         - type: object
           description: New user
           properties:
-            externalId:
-              type: string
-              description: External ID
             name:
               type: string
               description: User name

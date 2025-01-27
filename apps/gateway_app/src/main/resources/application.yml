@@ -1,38 +1,56 @@
 server:
   port: 8082
 
+services:
+  users:
+    base-url: http://localhost:8081
+
+firebase:
+  service-account-file: ${FIREBASE_SERVICE_ACCOUNT_FILE}
+
 spring:
   cloud:
     gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:5173/"
+            allowedHeaders: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - DELETE
+              - PUT
+              - PATCH
       routes:
         - id: users-route
           uri: http://localhost:8081
           predicates:
-            - Path=/v1/users/**
+            - Path=/api/v1/users/**
           filters:
             - AuthenticationFilter
         - id: listenings-route
           uri: http://localhost:8000
           predicates:
-            - Path=/v1/listenings/**
+            - Path=/api/v1/listenings/**
           filters:
             - AuthenticationFilter
         - id: descriptions-route
           uri: http://localhost:8000
           predicates:
-            - Path=/v1/descriptions/**
+            - Path=/api/v1/descriptions/**
           filters:
             - AuthenticationFilter
         - id: chats-route
           uri: http://localhost:8000
           predicates:
-            - Path=/v1/chats/**
+            - Path=/api/v1/chats/**
           filters:
             - AuthenticationFilter
         - id: descriptions-route
           uri: http://localhost:8000
           predicates:
-            - Path=/v1/descriptions/**
+            - Path=/api/v1/descriptions/**
           filters:
             - AuthenticationFilter
   endpoints:

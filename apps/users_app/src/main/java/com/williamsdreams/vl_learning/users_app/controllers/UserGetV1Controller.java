@@ -1,0 +1,28 @@
+package com.williamsdreams.vl_learning.users_app.controllers;
+
+import com.williamsdreams.vl_learning.auth.application.find.UserFinder;
+import com.williamsdreams.vl_learning.users_app.api.UserGetV1Api;
+import com.williamsdreams.vl_learning.users_app.api.dto.UserDto;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequiredArgsConstructor
+public class UserGetV1Controller implements UserGetV1Api {
+
+    private final UserFinder userFinder;
+
+    @Override
+    public ResponseEntity<UserDto> getUserByExternalId(String externalId) {
+        return userFinder.findByExternalId(externalId).map(user -> ResponseEntity.ok(
+            new UserDto(
+                user.getEmail(),
+                user.getPassword(),
+                user.getName(),
+                user.getId(),
+                user.getExternalId()
+            )
+        )).orElseGet(() -> ResponseEntity.notFound().build());
+    }
+}
