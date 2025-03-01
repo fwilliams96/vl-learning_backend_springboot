@@ -1,6 +1,6 @@
 package com.williamsdreams.vl_learning.users.descriptions.infrastructure.persistence.postgresql.entity;
 
-import com.williamsdreams.vl_learning.shared.infrastructure.persistence.UuidIdentifiedEntity;
+import com.williamsdreams.vl_learning.users.shared.infrastructure.persistence.UuidIdentifiedEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;

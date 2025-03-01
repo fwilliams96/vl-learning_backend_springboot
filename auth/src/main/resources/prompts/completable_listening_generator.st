@@ -1,0 +1,2 @@
+Generate a narrative or conversational text of 500 words maximum inspired by the topic '{topic}'. The content should include descriptions, dialogues, and reflections, offering a variety of vocabulary and grammatical structures. The text should be rich in details and nuances, allowing students to practice their listening comprehension through reading aloud. However, it should not be overly concrete, leaving room for interpretation and analysis of different aspects of the topic. Deliver the final result following the JSON format below:
+{format}

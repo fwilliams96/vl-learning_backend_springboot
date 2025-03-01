@@ -1,6 +1,6 @@
 package com.williamsdreams.vl_learning.users_app.controllers;
 
-import com.williamsdreams.vl_learning.shared.domain.Audio;
+import com.williamsdreams.vl_learning.users.shared.domain.Audio;
 import com.williamsdreams.vl_learning.users.completable_listenings.application.create.UserCompletableListeningCreator;
 import com.williamsdreams.vl_learning.users.completable_listenings.domain.NewUserCompletableListening;
 import com.williamsdreams.vl_learning.users.completable_listenings.domain.UserCompletableListening;

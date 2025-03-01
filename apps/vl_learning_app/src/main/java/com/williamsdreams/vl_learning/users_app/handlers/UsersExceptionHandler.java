@@ -5,7 +5,7 @@ import com.williamsdreams.vl_learning.users_app.api.dto.ErrorMessageDto;
 import com.williamsdreams.vl_learning.users.domain.UserAlreadyExistsError;
 import com.williamsdreams.vl_learning.users.domain.UserInvalidCredentialsError;
 import com.williamsdreams.vl_learning.users.domain.UserNotFoundError;
-import com.williamsdreams.vl_learning.shared.domain.BaseException;
+import com.williamsdreams.vl_learning.users.shared.domain.BaseException;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.Ordered;

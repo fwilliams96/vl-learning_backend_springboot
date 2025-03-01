@@ -1,6 +1,6 @@
 package com.williamsdreams.vl_learning.users.descriptions.infrastructure.persistence.postgresql;
 
-import com.williamsdreams.vl_learning.shared.domain.Image;
+import com.williamsdreams.vl_learning.users.shared.domain.Image;
 import com.williamsdreams.vl_learning.users.descriptions.domain.UserDescription;
 import com.williamsdreams.vl_learning.users.descriptions.domain.UserDescriptionRepository;
 import com.williamsdreams.vl_learning.users.descriptions.infrastructure.persistence.postgresql.entity.UserDescriptionEntity;

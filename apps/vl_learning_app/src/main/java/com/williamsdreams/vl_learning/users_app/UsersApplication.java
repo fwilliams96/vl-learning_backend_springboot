@@ -5,7 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@SpringBootApplication(scanBasePackages = "com.williamsdreams.vl_learning")
+@SpringBootApplication(scanBasePackages = {
+		"com.williamsdreams.vl_learning.users_app",
+		"com.williamsdreams.vl_learning.users"
+})
 @EnableJpaRepositories(basePackages = {
 		"com.williamsdreams.vl_learning.users.infrastructure.persistence.postgresql.repository",
 		"com.williamsdreams.vl_learning.users.descriptions.infrastructure.persistence.postgresql.repository",

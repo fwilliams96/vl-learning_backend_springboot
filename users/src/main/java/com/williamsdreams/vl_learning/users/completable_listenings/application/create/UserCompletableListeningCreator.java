@@ -1,7 +1,7 @@
 package com.williamsdreams.vl_learning.users.completable_listenings.application.create;
 
-import com.williamsdreams.vl_learning.shared.domain.Audio;
-import com.williamsdreams.vl_learning.shared.domain.TextToSpeechGateway;
+import com.williamsdreams.vl_learning.users.shared.domain.Audio;
+import com.williamsdreams.vl_learning.users.shared.domain.TextToSpeechGateway;
 import com.williamsdreams.vl_learning.users.completable_listenings.domain.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

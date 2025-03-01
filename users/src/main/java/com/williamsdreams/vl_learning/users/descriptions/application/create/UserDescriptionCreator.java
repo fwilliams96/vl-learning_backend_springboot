@@ -1,6 +1,6 @@
 package com.williamsdreams.vl_learning.users.descriptions.application.create;
 
-import com.williamsdreams.vl_learning.shared.domain.Image;
+import com.williamsdreams.vl_learning.users.shared.domain.Image;
 import com.williamsdreams.vl_learning.users.descriptions.domain.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
 package com.williamsdreams.vl_learning.users.descriptions.infrastructure.ai.openai;
 
-import com.williamsdreams.vl_learning.shared.domain.Image;
+import com.williamsdreams.vl_learning.users.shared.domain.Image;
 import com.williamsdreams.vl_learning.users.descriptions.domain.UserDescriptionEvaluation;
 import com.williamsdreams.vl_learning.users.descriptions.domain.UserDescriptionEvaluationGateway;
 import com.williamsdreams.vl_learning.users.descriptions.domain.UserDescriptionProposal;

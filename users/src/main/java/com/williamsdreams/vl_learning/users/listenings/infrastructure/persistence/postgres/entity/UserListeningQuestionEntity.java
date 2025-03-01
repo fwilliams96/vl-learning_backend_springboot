@@ -1,6 +1,6 @@
 package com.williamsdreams.vl_learning.users.listenings.infrastructure.persistence.postgres.entity;
 
-import com.williamsdreams.vl_learning.shared.infrastructure.persistence.UuidIdentifiedEntity;
+import com.williamsdreams.vl_learning.users.shared.infrastructure.persistence.UuidIdentifiedEntity;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

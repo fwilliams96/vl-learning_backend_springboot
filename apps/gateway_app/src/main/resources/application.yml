@@ -5,16 +5,21 @@ services:
   users:
     base-url: http://localhost:8081
 
-firebase:
-  service-account-file: ${FIREBASE_SERVICE_ACCOUNT_FILE}
+#supabase:
+#  jwt-secret: ${SUPABASE_JWT_SECRET}
+
+jwt:
+  secret: ${JWT_SECRET}
 
 spring:
+  main:
+    web-application-type: reactive
   cloud:
     gateway:
       globalcors:
         cors-configurations:
           '[/**]':
-            allowed-origins: "http://localhost:5173"
+            allowed-origins: "*"
             allowed-methods: "*"
             allowed-headers: "*"
       routes:

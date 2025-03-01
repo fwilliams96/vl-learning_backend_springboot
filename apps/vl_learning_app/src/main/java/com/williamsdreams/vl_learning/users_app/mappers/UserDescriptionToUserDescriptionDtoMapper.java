@@ -1,6 +1,6 @@
 package com.williamsdreams.vl_learning.users_app.mappers;
 
-import com.williamsdreams.vl_learning.shared.domain.Image;
+import com.williamsdreams.vl_learning.users.shared.domain.Image;
 import com.williamsdreams.vl_learning.users.descriptions.domain.UserDescription;
 import com.williamsdreams.vl_learning.users_app.api.dto.UserDescriptionDto;
 import org.springframework.stereotype.Component;

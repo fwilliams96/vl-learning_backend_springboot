@@ -1,6 +1,6 @@
 package com.williamsdreams.vl_learning.users.listenings.infrastructure.persistence.postgres;
 
-import com.williamsdreams.vl_learning.shared.domain.Audio;
+import com.williamsdreams.vl_learning.users.shared.domain.Audio;
 import com.williamsdreams.vl_learning.users.listenings.domain.UserListening;
 import com.williamsdreams.vl_learning.users.listenings.domain.UserListeningRepository;
 import com.williamsdreams.vl_learning.users.listenings.infrastructure.persistence.postgres.entity.UserListeningEntity;

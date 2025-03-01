@@ -1,6 +1,6 @@
 package com.williamsdreams.vl_learning.users.completable_listenings.domain;
 
-import com.williamsdreams.vl_learning.shared.domain.Audio;
+import com.williamsdreams.vl_learning.users.shared.domain.Audio;
 import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;

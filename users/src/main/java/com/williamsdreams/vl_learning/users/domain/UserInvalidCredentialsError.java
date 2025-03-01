@@ -1,6 +1,6 @@
 package com.williamsdreams.vl_learning.users.domain;
 
-import com.williamsdreams.vl_learning.shared.domain.BaseException;
+import com.williamsdreams.vl_learning.users.shared.domain.BaseException;
 
 public class UserInvalidCredentialsError extends BaseException {
 
