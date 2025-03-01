@@ -1,0 +1,2 @@
+Generate a narrative or conversational text of 500 words maximum inspired by the topic '{topic}'. The content should include descriptions, dialogues, and reflections, offering a variety of vocabulary and grammatical structures for listening practice through reading aloud. Additionally, generate four questions related to the text to assess comprehension, ensuring that each question has only one correct answer while the others serve as distractors. Provide a total of four answer choices for each question. Deliver the final result following the JSON format below:
+{format}

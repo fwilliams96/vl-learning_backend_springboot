@@ -1,0 +1,645 @@
+openapi: 3.0.0
+info:
+  title: VL Learning Users API
+  version: 1.0.0
+  description: API that provides user operations for VL Learning
+tags:
+  - name: VL Learning Users API
+    description: VL Learning Users API
+paths:
+  /api/v1/users:
+    post:
+      tags:
+        - Users create post v1
+      parameters:
+        - in: header
+          name: X-User-Id
+          schema:
+            type: string
+          required: true
+          description: User ID
+      operationId: post-users-create
+      summary: POST users create
+      requestBody:
+        description: New user
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewUser'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+    get:
+      tags:
+          - User get v1
+      parameters:
+        - in: query
+          name: externalId
+          schema:
+            type: string
+          required: false
+          description: External ID
+      operationId: get-user-by-external-id
+      summary: GET user by external ID
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+  /api/v1/users/{userId}/descriptions:
+    post:
+      tags:
+        - User descriptions post v1
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: User ID
+      operationId: create-user-description
+      summary: POST user description
+      requestBody:
+        description: User description
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewUserDescription'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserDescription'
+  /api/v1/users/{userId}/descriptions/{descriptionId}:
+    get:
+      tags:
+        - User description get v1
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: User ID
+        - in: path
+          name: descriptionId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Description ID
+      operationId: get-user-description
+      summary: GET user description
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserDescription'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /api/v1/users/{userId}/descriptions/{descriptionId}/evaluation:
+    post:
+      tags:
+        - User description evaluation post v1
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: User ID
+        - in: path
+          name: descriptionId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Description ID
+      operationId: create-user-description-evaluation
+      summary: POST user description evaluation
+      requestBody:
+        description: User description evaluation
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserDescriptionProposal'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserDescriptionEvaluation'
+  /api/v1/users/{userId}/completable-listenings:
+    post:
+      tags:
+        - User completable listenings post v1
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: User ID
+      operationId: create-user-completable-listening
+      summary: POST user completable listening
+      requestBody:
+        description: User completable listening
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewCompletableUserListening'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompletableUserListening'
+  /api/v1/users/{userId}/completable-listenings/{completableListeningId}:
+    get:
+      tags:
+        - User completable listening get v1
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: User ID
+        - in: path
+          name: completableListeningId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Completable listening ID
+      operationId: get-user-completable-listening
+      summary: GET user completable listening
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CompletableUserListening'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /api/v1/users/{userId}/listenings:
+    post:
+      tags:
+        - User listenings post v1
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: User ID
+      operationId: create-user-listening
+      summary: POST user listening
+      requestBody:
+        description: User listening
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewUserListening'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserListening'
+  /api/v1/users/{userId}/listenings/{listeningId}:
+    get:
+      tags:
+        - User listening get v1
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: User ID
+        - in: path
+          name: listeningId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Listening ID
+      operationId: get-user-listening
+      summary: GET user listening
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserListening'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /api/v1/users/{userId}/readings:
+    post:
+      tags:
+        - User readings post v1
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: User ID
+      operationId: create-user-reading
+      summary: POST user reading
+      requestBody:
+        description: User reading
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewUserReading'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserReading'
+  /api/v1/users/{userId}/readings/{readingId}:
+    get:
+      tags:
+        - User reading get v1
+      parameters:
+        - in: path
+          name: userId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: User ID
+        - in: path
+          name: readingId
+          schema:
+            type: string
+            format: uuid
+          required: true
+          description: Reading ID
+      operationId: get-user-reading
+      summary: GET user reading
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserReading'
+        '404':
+          description: Not Found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    User:
+      allOf:
+        - $ref: '#/components/schemas/NewUser'
+        - type: object
+          description: User
+          properties:
+            id:
+              type: string
+              format: uuid
+              description: User ID
+            externalId:
+              type: string
+              description: External ID
+          required:
+            - id
+    NewUser:
+      allOf:
+        - $ref: '#/components/schemas/UserCredentials'
+        - type: object
+          description: New user
+          properties:
+            name:
+              type: string
+              description: User name
+          required:
+            - externalId
+            - name
+    UserCredentials:
+      type: object
+      description: User
+      properties:
+        email:
+          type: string
+          description: Email
+          format: email
+        password:
+          type: string
+          description: Password
+      required:
+        - email
+        - password
+    NewUserDescription:
+      type: object
+      description: New user description
+      properties:
+        topic:
+          type: string
+          description: Topic
+        eventId:
+          type: string
+          format: uuid
+          description: Event ID
+      required:
+        - topic
+    UserDescription:
+      allOf:
+        - $ref: '#/components/schemas/NewUserDescription'
+        - type: object
+          description: User description
+          properties:
+            id:
+              type: string
+              format: uuid
+              description: ID
+            title:
+              type: string
+              description: Title
+            image:
+              type: string
+              description: Image base64
+            userId:
+              type: string
+              format: uuid
+              description: User ID
+          required:
+            - id
+            - userId
+            - image
+    UserDescriptionProposal:
+      type: object
+      description: User description proposal
+      properties:
+        description:
+          type: string
+          description: Description
+      required:
+        - description
+    UserDescriptionEvaluation:
+      type: object
+      description: User description evaluation
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: ID
+        score:
+          type: number
+          format: double
+          description: Score
+        feedback:
+          type: string
+          description: Feedback
+        proposedDescription:
+          type: string
+          description: Proposed description
+      required:
+        - id
+        - score
+        - feedback
+        - proposedDescription
+    NewUserListening:
+      type: object
+      description: New user listening
+      properties:
+        topic:
+          type: string
+          description: Topic
+        eventId:
+          type: string
+          format: uuid
+          description: Event ID
+      required:
+        - topic
+    UserListening:
+      allOf:
+        - $ref: '#/components/schemas/NewUserListening'
+        - type: object
+          description: User listening
+          properties:
+            id:
+              type: string
+              format: uuid
+              description: ID
+            title:
+              type: string
+              description: Title
+            text:
+              type: string
+              description: Text
+            audio:
+              type: string
+              description: Audio base64
+            questions:
+              type: array
+              items:
+                $ref: '#/components/schemas/Question'
+            userId:
+              type: string
+              format: uuid
+              description: User ID
+          required:
+            - id
+            - userId
+            - audio
+    NewUserReading:
+      type: object
+      description: New user reading
+      properties:
+        topic:
+          type: string
+          description: Topic
+        eventId:
+          type: string
+          format: uuid
+          description: Event ID
+      required:
+        - topic
+    UserReading:
+      allOf:
+        - $ref: '#/components/schemas/NewUserReading'
+        - type: object
+          description: User reading
+          properties:
+            id:
+              type: string
+              format: uuid
+              description: ID
+            title:
+              type: string
+              description: Title
+            text:
+              type: string
+              description: Text
+            questions:
+              type: array
+              items:
+                $ref: '#/components/schemas/Question'
+            userId:
+              type: string
+              format: uuid
+              description: User ID
+          required:
+            - id
+            - userId
+            - text
+    Question:
+      type: object
+      description: Question
+      properties:
+        question:
+          type: string
+          description: Text
+        options:
+          type: array
+          items:
+            $ref: '#/components/schemas/QuestionOption'
+    QuestionOption:
+      type: object
+      description: Question option
+      properties:
+        text:
+          type: string
+          description: Text
+        correct:
+          type: boolean
+          description: Correct
+    NewCompletableUserListening:
+      type: object
+      description: New completable user listening
+      properties:
+        topic:
+          type: string
+          description: Topic
+        eventId:
+          type: string
+          format: uuid
+          description: Event ID
+      required:
+        - topic
+    CompletableUserListening:
+      allOf:
+        - $ref: '#/components/schemas/NewCompletableUserListening'
+        - type: object
+          description: Completable user listening
+          properties:
+            id:
+              type: string
+              format: uuid
+              description: ID
+            title:
+              type: string
+              description: Title
+            finished:
+              type: boolean
+              description: Finished
+            audio:
+              type: string
+              description: Audio base64
+            words:
+              type: array
+              items:
+                $ref: '#/components/schemas/CompletableUserListeningWord'
+            userId:
+              type: string
+              format: uuid
+              description: User ID
+          required:
+            - id
+            - userId
+            - words
+            - finished
+            - audio
+    CompletableUserListeningWord:
+      type: object
+      description: Completable user listening word
+      properties:
+        text:
+          type: string
+          description: Text
+        readOnly:
+          type: boolean
+          description: Read only
+        response:
+          type: string
+          description: Response
+        correct:
+          type: boolean
+          description: Correct
+      required:
+        - text
+        - readOnly
+    Error:
+      type: object
+      properties:
+        status:
+          type: integer
+          format: int32
+        error:
+          type: string
+        path:
+          type: string
+        timestamp:
+          type: integer
+          format: int64
+        errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/ErrorMessage'
+    ErrorMessage:
+      type: object
+      properties:
+        message:
+          type: string
+        code:
+          type: string
