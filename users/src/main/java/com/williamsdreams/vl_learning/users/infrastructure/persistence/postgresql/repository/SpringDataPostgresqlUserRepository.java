@@ -12,6 +12,4 @@ public interface SpringDataPostgresqlUserRepository extends JpaRepository<UserEn
 
     Optional<UserEntity> findByEmail(String email);
 
-    Optional<UserEntity> findByExternalId(String externalId);
-
 }

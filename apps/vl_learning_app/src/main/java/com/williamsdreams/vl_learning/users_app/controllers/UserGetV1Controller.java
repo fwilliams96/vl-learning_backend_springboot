@@ -7,6 +7,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.UUID;
+
 @RestController
 @RequiredArgsConstructor
 public class UserGetV1Controller implements UserGetV1Api {
@@ -14,14 +16,12 @@ public class UserGetV1Controller implements UserGetV1Api {
     private final UserFinder userFinder;
 
     @Override
-    public ResponseEntity<UserDto> getUserByExternalId(String externalId) {
-        return userFinder.findByExternalId(externalId).map(user -> ResponseEntity.ok(
+    public ResponseEntity<UserDto> getUser(UUID userId) {
+        return userFinder.find(userId).map(user -> ResponseEntity.ok(
             new UserDto(
                 user.getEmail(),
-                user.getPassword(),
                 user.getName(),
-                user.getId(),
-                user.getExternalId()
+                user.getId()
             )
         )).orElseGet(() -> ResponseEntity.notFound().build());
     }

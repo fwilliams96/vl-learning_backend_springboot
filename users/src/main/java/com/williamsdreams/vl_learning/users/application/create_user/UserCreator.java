@@ -13,18 +13,16 @@ public class UserCreator {
 
     private final UserRepository userRepository;
 
-    public User create(NewUser user) {
+    public User create(UUID userId, NewUser user) {
         Optional<User> byEmail = userRepository.findByEmail(user.getEmail());
         if (byEmail.isPresent()) {
             throw new UserAlreadyExistsError(user.getEmail());
         }
         return userRepository.create(
                 User.builder()
-                        .id(UUID.randomUUID())
-                        .externalId(user.getExternalId())
+                        .id(userId)
                         .name(user.getName())
                         .email(user.getEmail())
-                        .password(user.getPassword())
                         .build()
         );
     }

@@ -5,9 +5,9 @@ import lombok.experimental.SuperBuilder;
 
 @Getter
 @SuperBuilder
-public class NewUser extends UserCredentials {
+public class NewUser {
 
-    private String externalId;
+    private String email;
     private String name;
 
 }

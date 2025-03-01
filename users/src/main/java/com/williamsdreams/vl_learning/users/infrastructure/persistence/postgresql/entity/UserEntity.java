@@ -12,9 +12,7 @@ import lombok.EqualsAndHashCode;
 @Table(name = "users")
 public class UserEntity extends UuidIdentifiedEntity {
 
-    private String externalId;
     private String name;
     private String email;
-    private String password;
 
 }
