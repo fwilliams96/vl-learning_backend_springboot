@@ -7,13 +7,13 @@ tags:
   - name: VL Learning Users API
     description: VL Learning Users API
 paths:
-  /api/v1/users/{userId}/descriptions:
+  /api/v1/descriptions:
     post:
       tags:
         - User descriptions post v1
       parameters:
-        - in: path
-          name: userId
+        - in: header
+          name: X-User-Id
           schema:
             type: string
             format: uuid
@@ -35,13 +35,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserDescription'
-  /api/v1/users/{userId}/descriptions/{descriptionId}:
+  /api/v1/descriptions/{descriptionId}:
     get:
       tags:
         - User description get v1
       parameters:
-        - in: path
-          name: userId
+        - in: header
+          name: X-User-Id
           schema:
             type: string
             format: uuid
@@ -69,13 +69,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /api/v1/users/{userId}/descriptions/{descriptionId}/evaluation:
+  /api/v1/descriptions/{descriptionId}/evaluation:
     post:
       tags:
         - User description evaluation post v1
       parameters:
-        - in: path
-          name: userId
+        - in: header
+          name: X-User-Id
           schema:
             type: string
             format: uuid
@@ -104,13 +104,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserDescriptionEvaluation'
-  /api/v1/users/{userId}/completable-listenings:
+  /api/v1/completable-listenings:
     post:
       tags:
         - User completable listenings post v1
       parameters:
-        - in: path
-          name: userId
+        - in: header
+          name: X-User-Id
           schema:
             type: string
             format: uuid
@@ -132,13 +132,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/CompletableUserListening'
-  /api/v1/users/{userId}/completable-listenings/{completableListeningId}:
+  /api/v1/completable-listenings/{completableListeningId}:
     get:
       tags:
         - User completable listening get v1
       parameters:
-        - in: path
-          name: userId
+        - in: header
+          name: X-User-Id
           schema:
             type: string
             format: uuid
@@ -166,13 +166,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /api/v1/users/{userId}/listenings:
+  /api/v1/listenings:
     post:
       tags:
         - User listenings post v1
       parameters:
-        - in: path
-          name: userId
+        - in: header
+          name: X-User-Id
           schema:
             type: string
             format: uuid
@@ -194,13 +194,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserListening'
-  /api/v1/users/{userId}/listenings/{listeningId}:
+  /api/v1/listenings/{listeningId}:
     get:
       tags:
         - User listening get v1
       parameters:
-        - in: path
-          name: userId
+        - in: header
+          name: X-User-Id
           schema:
             type: string
             format: uuid
@@ -228,13 +228,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-  /api/v1/users/{userId}/readings:
+  /api/v1/readings:
     post:
       tags:
         - User readings post v1
       parameters:
-        - in: path
-          name: userId
+        - in: header
+          name: X-User-Id
           schema:
             type: string
             format: uuid
@@ -256,13 +256,13 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserReading'
-  /api/v1/users/{userId}/readings/{readingId}:
+  /api/v1/readings/{readingId}:
     get:
       tags:
         - User reading get v1
       parameters:
-        - in: path
-          name: userId
+        - in: header
+          name: X-User-Id
           schema:
             type: string
             format: uuid

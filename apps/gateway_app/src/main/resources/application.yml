@@ -20,32 +20,20 @@ spring:
             allowed-methods: "*"
             allowed-headers: "*"
       routes:
-        - id: users-route
-          uri: http://localhost:8081
-          predicates:
-            - Path=/api/v1/users/**
-          filters:
-            - AuthenticationFilter
         - id: listenings-route
-          uri: http://localhost:8000
+          uri: http://localhost:8081
           predicates:
             - Path=/api/v1/listenings/**
           filters:
             - AuthenticationFilter
-        - id: descriptions-route
-          uri: http://localhost:8000
+        - id: readings-route
+          uri: http://localhost:8081
           predicates:
-            - Path=/api/v1/descriptions/**
-          filters:
-            - AuthenticationFilter
-        - id: chats-route
-          uri: http://localhost:8000
-          predicates:
-            - Path=/api/v1/chats/**
+            - Path=/api/v1/readings/**
           filters:
             - AuthenticationFilter
         - id: descriptions-route
-          uri: http://localhost:8000
+          uri: http://localhost:8081
           predicates:
             - Path=/api/v1/descriptions/**
           filters:
