@@ -1,12 +1,12 @@
-package com.williamsdreams.vl_learning.users_app.controllers;
+package com.williamsdreams.vl_learning.app.controllers;
 
 import com.williamsdreams.vl_learning.users.readings.application.create.UserReadingCreator;
 import com.williamsdreams.vl_learning.users.readings.domain.NewUserReading;
 import com.williamsdreams.vl_learning.users.readings.domain.UserReading;
-import com.williamsdreams.vl_learning.users_app.api.UserReadingsPostV1Api;
-import com.williamsdreams.vl_learning.users_app.api.dto.NewUserReadingDto;
-import com.williamsdreams.vl_learning.users_app.api.dto.UserReadingDto;
-import com.williamsdreams.vl_learning.users_app.mappers.UserReadingToUserReadingDtoMapper;
+import com.williamsdreams.vl_learning.app.api.UserReadingsPostV1Api;
+import com.williamsdreams.vl_learning.app.api.dto.NewUserReadingDto;
+import com.williamsdreams.vl_learning.app.api.dto.UserReadingDto;
+import com.williamsdreams.vl_learning.app.mappers.UserReadingToUserReadingDtoMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,13 +1,13 @@
-package com.williamsdreams.vl_learning.users_app.controllers;
+package com.williamsdreams.vl_learning.app.controllers;
 
 import com.williamsdreams.vl_learning.users.shared.domain.Audio;
 import com.williamsdreams.vl_learning.users.completable_listenings.application.create.UserCompletableListeningCreator;
 import com.williamsdreams.vl_learning.users.completable_listenings.domain.NewUserCompletableListening;
 import com.williamsdreams.vl_learning.users.completable_listenings.domain.UserCompletableListening;
-import com.williamsdreams.vl_learning.users_app.api.UserCompletableListeningsPostV1Api;
-import com.williamsdreams.vl_learning.users_app.api.dto.CompletableUserListeningDto;
-import com.williamsdreams.vl_learning.users_app.api.dto.CompletableUserListeningWordDto;
-import com.williamsdreams.vl_learning.users_app.api.dto.NewCompletableUserListeningDto;
+import com.williamsdreams.vl_learning.app.api.UserCompletableListeningsPostV1Api;
+import com.williamsdreams.vl_learning.app.api.dto.CompletableUserListeningDto;
+import com.williamsdreams.vl_learning.app.api.dto.CompletableUserListeningWordDto;
+import com.williamsdreams.vl_learning.app.api.dto.NewCompletableUserListeningDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.CollectionUtils;

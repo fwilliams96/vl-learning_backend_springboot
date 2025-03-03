@@ -1,11 +1,11 @@
-package com.williamsdreams.vl_learning.users_app.controllers;
+package com.williamsdreams.vl_learning.app.controllers;
 
 import com.williamsdreams.vl_learning.users.descriptions.application.evaluate.UserDescriptionEvaluator;
 import com.williamsdreams.vl_learning.users.descriptions.domain.UserDescriptionEvaluation;
 import com.williamsdreams.vl_learning.users.descriptions.domain.UserDescriptionProposal;
-import com.williamsdreams.vl_learning.users_app.api.UserDescriptionEvaluationPostV1Api;
-import com.williamsdreams.vl_learning.users_app.api.dto.UserDescriptionEvaluationDto;
-import com.williamsdreams.vl_learning.users_app.api.dto.UserDescriptionProposalDto;
+import com.williamsdreams.vl_learning.app.api.UserDescriptionEvaluationPostV1Api;
+import com.williamsdreams.vl_learning.app.api.dto.UserDescriptionEvaluationDto;
+import com.williamsdreams.vl_learning.app.api.dto.UserDescriptionProposalDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;

@@ -36,7 +36,7 @@ ARG APP_VERSION=1.0.0-SNAPSHOT
 ENV APP_VERSION=${APP_VERSION}
 
 # Copy artifact from previous build phase
-COPY --from=build /build/apps/vl_learning_app/target/vl_learning_app-${APP_VERSION}.jar app.jar
+COPY --from=build /build/apps/gateway_app/target/gateway_app-${APP_VERSION}.jar app.jar
 
 ARG PORT_APP=8080
 ENV PORT $PORT_APP

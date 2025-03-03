@@ -6,7 +6,7 @@
 
     <groupId>com.williamsdreams</groupId>
     <artifactId>vl_learning_app</artifactId>
-    <name>users_app</name>
+    <name>vl_learning_app</name>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
@@ -20,9 +20,9 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <swagger-annotations.version>2.2.7</swagger-annotations.version>
-        <openapi-generator-api-base-package-name>com.williamsdreams.vl_learning.users_app</openapi-generator-api-base-package-name>
-        <openapi-generator-api-package-name>com.williamsdreams.vl_learning.users_app.api</openapi-generator-api-package-name>
-        <openapi-generator-model-package-name>com.williamsdreams.vl_learning.users_app.api.dto</openapi-generator-model-package-name>
+        <openapi-generator-api-base-package-name>com.williamsdreams.vl_learning.app</openapi-generator-api-base-package-name>
+        <openapi-generator-api-package-name>com.williamsdreams.vl_learning.app.api</openapi-generator-api-package-name>
+        <openapi-generator-model-package-name>com.williamsdreams.vl_learning.app.api.dto</openapi-generator-model-package-name>
         <openapi-generator-swagger-file-path>${project.basedir}/src/main/resources/swagger.yml</openapi-generator-swagger-file-path>
     </properties>
 
@@ -47,11 +47,6 @@
         <dependency>
             <groupId>com.williamsdreams</groupId>
             <artifactId>users</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.williamsdreams</groupId>
-            <artifactId>shared</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
         <dependency>

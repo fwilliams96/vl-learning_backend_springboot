@@ -1,12 +1,12 @@
-package com.williamsdreams.vl_learning.users_app.controllers;
+package com.williamsdreams.vl_learning.app.controllers;
 
 import com.williamsdreams.vl_learning.users.listenings.application.create.UserListeningCreator;
 import com.williamsdreams.vl_learning.users.listenings.domain.NewUserListening;
 import com.williamsdreams.vl_learning.users.listenings.domain.UserListening;
-import com.williamsdreams.vl_learning.users_app.api.UserListeningsPostV1Api;
-import com.williamsdreams.vl_learning.users_app.api.dto.NewUserListeningDto;
-import com.williamsdreams.vl_learning.users_app.api.dto.UserListeningDto;
-import com.williamsdreams.vl_learning.users_app.mappers.UserListeningToUserListeningDtoMapper;
+import com.williamsdreams.vl_learning.app.api.UserListeningsPostV1Api;
+import com.williamsdreams.vl_learning.app.api.dto.NewUserListeningDto;
+import com.williamsdreams.vl_learning.app.api.dto.UserListeningDto;
+import com.williamsdreams.vl_learning.app.mappers.UserListeningToUserListeningDtoMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;

@@ -1,35 +1,19 @@
 version: '3.9'
 services:
-  users:
-    container_name: users
+  vl_learning_app:
+    container_name: vl_learning_app
     build:
-      context: ./
-      dockerfile: ./Dockerfile
+      context: ../..
+      dockerfile: apps/vl_learning_app/Dockerfile
     ports:
       - "8081:8081"
     environment:
       - PORT=8081
       - DB_HOST=${DB_HOST}
+      - DB_NAME=${DB_NAME}
       - DB_PORT=${DB_PORT}
       - DB_USER=${DB_USER}
       - DB_PASSWORD=${DB_PASSWORD}
-      - DB_NAME=users
-    depends_on:
-      - postgresql
+      - SPRING_AI_OPENAI_API_KEY=${SPRING_AI_OPENAI_API_KEY}
+      - ELEVEN_LABS_API_KEY=${ELEVEN_LABS_API_KEY}
     restart: always
-
-  postgresql:
-    image: postgres:13
-    container_name: postgresql
-    ports:
-      - "5432:5432"
-    environment:
-      - POSTGRES_USER=${DB_USER}
-      - POSTGRES_PASSWORD=${DB_PASSWORD}
-      - POSTGRES_DB=users
-    volumes:
-      - postgresdata:/var/lib/postgresql/data
-    restart: always
-
-volumes:
-  postgresdata:

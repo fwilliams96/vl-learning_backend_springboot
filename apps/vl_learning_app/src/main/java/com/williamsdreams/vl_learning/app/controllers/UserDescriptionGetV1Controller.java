@@ -1,10 +1,10 @@
-package com.williamsdreams.vl_learning.users_app.controllers;
+package com.williamsdreams.vl_learning.app.controllers;
 
 import com.williamsdreams.vl_learning.users.descriptions.application.find.UserDescriptionFinder;
 import com.williamsdreams.vl_learning.users.descriptions.domain.UserDescription;
-import com.williamsdreams.vl_learning.users_app.api.UserDescriptionGetV1Api;
-import com.williamsdreams.vl_learning.users_app.api.dto.UserDescriptionDto;
-import com.williamsdreams.vl_learning.users_app.mappers.UserDescriptionToUserDescriptionDtoMapper;
+import com.williamsdreams.vl_learning.app.api.UserDescriptionGetV1Api;
+import com.williamsdreams.vl_learning.app.api.dto.UserDescriptionDto;
+import com.williamsdreams.vl_learning.app.mappers.UserDescriptionToUserDescriptionDtoMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;

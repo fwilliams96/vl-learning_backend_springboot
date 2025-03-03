@@ -1,4 +1,4 @@
-package com.williamsdreams.vl_learning.users_app.configuration;
+package com.williamsdreams.vl_learning.app.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

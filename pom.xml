@@ -99,7 +99,6 @@
 		<module>apps/gateway_app</module>
 		<module>users</module>
 		<module>auth</module>
-		<module>shared</module>
 	</modules>
 
 </project>
